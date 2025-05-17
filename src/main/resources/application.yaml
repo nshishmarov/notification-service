@@ -1,0 +1,24 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: nt-service
+    datasource:
+        driver-class-name: ${DB_DRIVER}
+        url: ${DB_URL}
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
+        hikari:
+            connection-test-query:
+    liquibase:
+        enabled: true
+        change-log: classpath:db/changelog/db.changelog-master.yaml
+    main:
+        allow-bean-definition-overriding: true
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none

@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_payment_table
+      author: nikita
+      changes:
+        - createTable:
+            schemaName: public
+            tableName: payments
+            columns:
+              - column:
+                  name: paymentId
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: paymentName
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: paymentDate
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: paymentStatus
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+        - createSequence:
+            schemaName: public
+            sequenceName: payments_seq
+            startValue: 0
+            minValue: 0
+            incrementBy: 1
+        - addPrimaryKey:
+            schemaName: public
+            tableName: payments
+            columnNames: paymentId
+            constraintName: payments_pk
