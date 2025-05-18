@@ -24,3 +24,14 @@ spring:
             ddl-auto: none
             naming:
                 physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: user
+        password: password
+
+
+rabbitmq:
+    queue:
+        payment:
+            name: payment-queue

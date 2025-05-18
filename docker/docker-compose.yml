@@ -20,6 +20,7 @@ services:
     image: rabbitmq:management
     ports:
       - 15672:15672
+      - 5672:5672
     environment:
       RABBITMQ_DEFAULT_USER: user
       RABBITMQ_DEFAULT_PASS: password
